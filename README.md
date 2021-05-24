@@ -1,1 +1,2 @@
-# terraform
+# Terraform
+## lab de terraform
