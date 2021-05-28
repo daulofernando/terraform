@@ -1,11 +1,12 @@
 variable "environment" {
   type        = string
-  description = ""
+  description = "dev"
 }
 
 variable "aws_region" {
   type        = string
   description = "regiao da aws"
+  default     = "us-east-1"
 }
 
 variable "aws_profile" {
@@ -17,11 +18,12 @@ variable "aws_profile" {
 variable "instance_ami" {
   type        = string
   description = ""
+  default     = "ami-0be6f09264f372d7a"
 }
 
 variable "instance_type" {
   type        = string
-  description = ""
+  description = "t2.micro"
 }
 
 variable "instance_tags" {
