@@ -35,3 +35,4 @@ variable "instance_tags" {
   }
 
 }
+
