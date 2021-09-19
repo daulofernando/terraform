@@ -1,26 +1,14 @@
-terraform {
-  required_version = "0.15.4"
-
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "3.42.0"
-    }
-  }
-}
-
 provider "aws" {
-  region = var.aws_region
+  version = "~> 2.2"
+  region = "us-east-1"
 }
 
-terraform {
-  backend "s3" {
-    bucket = "tfstate-566740411665"
-    key    = "dev/terraform.tfstate"
-    region = "us-east-1"
-  }
-}
-
-module "bucket" {
-  source = "./modulo"
+resource "aws_instance" "maquina" {
+    count = 2
+    ami = "ami-0747bdcabd34c712a"
+    instance_type = "t2.micro"
+    key_name = "terraform"
+    tags = {
+        Name = "dev ${count.index}"
+    }
 }
