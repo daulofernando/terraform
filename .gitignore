@@ -35,3 +35,5 @@ node_modules/
 *.zip
 tfplan.out
 plan.tfout
+terraform.lock.hcl
+
